@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="SequenceDiagramTestApp.exe" version="1.0.0.0" publicKeyToken="89acdf1e6641a61f" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="SequenceDiagramTestApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="SequenceDiagramTestApp.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="711952">
+      <assemblyIdentity name="Newtonsoft.Json" version="13.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4eJ697B+7t9c5xqSVfBCKBam/FhJpIPGcU4bRyBE+p0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SequenceDiagramLib.dll" size="36352">
+      <assemblyIdentity name="SequenceDiagramLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>sPojCWn3+uxUJKYk1lwnbGTpu3CTnbInPKtbHT3KuS0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SequenceDiagramTestApp.exe" size="14248">
+      <assemblyIdentity name="SequenceDiagramTestApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nKWV3jys5TarJfL9qHlIBEsBkVPXuyGRDjkiekxA5ww=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="SequenceDiagramTestApp.exe.config" size="161">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1hvekB5xicyX1FodTEqjnUxN4raEGXc+x3QzhQbWWa0=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=ASI\rhermano" issuerKeyHash="737d02000d9c2e30646aee6683aac89e248f5294" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Yz6K75orWgrXNa02yirmALY0KJVHrKISAIsNEZ5Qpc8=</DigestValue></Reference></SignedInfo><SignatureValue>krgrkdOLbmaFBrXFcoDmkSOZLZEO6dlYfhBd5zDNww/jMx4PXzmV4ru+GdN+fROmWWhH6f5c5M3A9K9Z9EPb7fmGfyQ/TTK0L+5r0E8GTZ0REwM7pP9K/ImeH7u+mlFaCYNOMPnOshTleTKw+1815K75eqhFIDOVfDm8ZgY9og4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>3WugbuWHNMSfxQfDRPGalqpu55y2Imdqs0MVHnK0/uxxGY29f+EjVAO2o1y5KQ49LmQoYmP/sSPkPWoqRoDovdauPsc10hyjhQt6Zfc5FMYMTTkcM6Y/ynLjphGv2zmCt/dWWaYZcDdkSAnInYhFuc9zNV8ARN2OhIMersqwObk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="cfa5509e110d8b0012a2ac47952834b600e62aca36ad35d70a5a2b9aef8a3e63" Description="" Url=""><as:assemblyIdentity name="SequenceDiagramTestApp.exe" version="1.0.0.0" publicKeyToken="89acdf1e6641a61f" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=ASI\rhermano</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>dEAV3fyAKXWkylTl2P/onSN1VCxwsVxdrLx3XHuol5s=</DigestValue></Reference></SignedInfo><SignatureValue>Ywb2J6ltRD969/3vJAihxnn4TAwedKuLa6JYsAbyHEu1OKDu7K07u0NwiCTJ7iZxT/b0Ynfe9p/BDTrlIXDQSlOc9KV4MA8xBQ8HaP++fDg+5xQqFWIKm2aKNESjn46TeCd9j67ojCXo8xS/65ZeIU9TI3pmeTDnevNhl1EbrTg=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>3WugbuWHNMSfxQfDRPGalqpu55y2Imdqs0MVHnK0/uxxGY29f+EjVAO2o1y5KQ49LmQoYmP/sSPkPWoqRoDovdauPsc10hyjhQt6Zfc5FMYMTTkcM6Y/ynLjphGv2zmCt/dWWaYZcDdkSAnInYhFuc9zNV8ARN2OhIMersqwObk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQdqdckutL3YhP94GG/lXV9zANBgkqhkiG9w0BAQsFADAjMSEwHwYDVQQDHhgAQQBTAEkAXAByAGgAZQByAG0AYQBuAG8wHhcNMjMwNDIwMDE1NDA5WhcNMjQwNDE5MDc1NDA5WjAjMSEwHwYDVQQDHhgAQQBTAEkAXAByAGgAZQByAG0AYQBuAG8wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAN1roG7lhzTEn8UHw0TxmpaqbuectiJnarNDFR5ytP7scRmNvX/hI1QDtqNcuSkOPS5kKGJj/7Ej5D1qKkaA6L3Wrj7HNdIco4ULemX3ORTGDE05HDOmP8py46YRr9s5grf3VlmmGXA3ZEgJyJ2IRbnPczVfAETdjoSDHq7KsDm5AgMBAAEwDQYJKoZIhvcNAQELBQADgYEABqNjn6D3Q2eOLaHGAASMUZMeCczXGnIABkn7sMqfo+Y2mhW+PRlBywZRFPEUWw9XrrWj4yosnplqy6qqT1PjpNHwkGaoZzFjVxMGQrsNxPD2jNEeTgYGSWm9D++8qWjLTPi4EE5ZWuHGHh91YMnFyzOgc7KnBLqiobGxMm2X6Jw=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

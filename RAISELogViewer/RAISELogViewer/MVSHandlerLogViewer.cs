@@ -97,8 +97,11 @@ namespace SequenceDiagramTestApp
             this.sequenceDiagram.Sequence.Clear();
             list.Clear();
 
+            Sequence sequence = this.sequenceDiagram.Sequence;
+
             if (!string.IsNullOrEmpty(file))
             {
+                sequence.Tick("");
                 var sampe = File.ReadAllLines(file).ToList()
                 .Select((value, index) => new { value, index })
                 .Where(x => x.value.Substring(0, 12) == time)
@@ -131,7 +134,6 @@ namespace SequenceDiagramTestApp
 
                             d.JsonString = ss;
                             JObject json = JObject.Parse(d.JsonString);
-                            Sequence sequence = this.sequenceDiagram.Sequence;
 
                             string sP1 = json?["hit"]?["label"]?["callFrom"]?.ToString();
                             string sP2 = json?["hit"]?["label"]?["callTo"]?.ToString();

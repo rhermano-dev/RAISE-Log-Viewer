@@ -47,7 +47,8 @@ namespace SequenceDiagramTestApp
 
         private void MVSHandlerLogViewer_Load(object sender, EventArgs e)
         {
-            file = MainData.FilePath + "/MVSC/MVSC" + MainData.Time + ".txt";
+            //file = MainData.FilePath + "/MVSC/MVSC" + MainData.Time + ".txt";
+            file = "D:\\_VM\\Log\\MVSC\\MVSC20230420.txt";
             SequenceLoad("");
         }
 
@@ -80,8 +81,11 @@ namespace SequenceDiagramTestApp
             this.sequenceDiagram.Sequence.Clear();
             list.Clear();
 
+            Sequence sequence = this.sequenceDiagram.Sequence;
+
             if (!string.IsNullOrEmpty(file))
             {
+                sequence.Tick("");
                 var sampe = File.ReadAllLines(file).ToList()
                 .Select((value, index) => new { value, index })
                 .Where(x => x.value.Substring(0, 12) == time)
@@ -107,16 +111,17 @@ namespace SequenceDiagramTestApp
 
                         d.JsonString = ss;
                         JObject json = JObject.Parse(d.JsonString);
-                        Sequence sequence = this.sequenceDiagram.Sequence;
+                        
 
-                        string sP1 = json?["hit"]?["label"]?["callFrom"]?.ToString();
-                        string sP2 = json?["hit"]?["label"]?["callTo"]?.ToString();
+                        var t = json.SelectToken("$..hit");
+                        string sP1 = t?["label"]?["callFrom"]?.ToString();
+                        string sP2 = t?["label"]?["callTo"]?.ToString();
 
                         if (sP1 != null || sP2 != null)
                         {
                             Participant p1 = sequence.Participants.CreateOrGet(sP1);
                             Participant p2 = sequence.Participants.CreateOrGet(sP2);
-                            sequence.Messages.Add(json?["hit"]?["label"]?["scene"]?.ToString(), p1, p2, sP1 + " -> " + sP2);
+                            sequence.Messages.Add(t?["label"]?["scene"]?.ToString(), p1, p2, sP1 + " -> " + sP2);
                             sequence.Tick(d.Time);
                             sequence.Continue();
 

@@ -35,13 +35,13 @@ namespace RAISELogViewer
 
             MainData.Time = this.dateTimePicker1.Text;
             MainData.FilePath = folderBrowserDialog1.SelectedPath.ToString();
-
             mvsh.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.dateTimePicker1.MaxDate = DateTime.Now;
+            this.Location = new Point(20,20);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -58,6 +58,11 @@ namespace RAISELogViewer
             MainData.FilePath = folderBrowserDialog1.SelectedPath.ToString();
 
             mvsc.Show();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

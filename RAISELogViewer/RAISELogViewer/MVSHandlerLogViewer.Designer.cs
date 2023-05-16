@@ -44,13 +44,13 @@
             // sequenceDiagram
             // 
             this.sequenceDiagram.AutoScroll = true;
-            this.sequenceDiagram.AutoScrollMinSize = new System.Drawing.Size(1052, 110);
+            this.sequenceDiagram.AutoScrollMinSize = new System.Drawing.Size(1165, 110);
             this.sequenceDiagram.BackColor = System.Drawing.Color.White;
             this.sequenceDiagram.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sequenceDiagram.Location = new System.Drawing.Point(0, 0);
             this.sequenceDiagram.Margin = new System.Windows.Forms.Padding(2);
             this.sequenceDiagram.Name = "sequenceDiagram";
-            this.sequenceDiagram.Size = new System.Drawing.Size(1052, 782);
+            this.sequenceDiagram.Size = new System.Drawing.Size(1165, 782);
             this.sequenceDiagram.SwimlaneWidth = 150;
             this.sequenceDiagram.TabIndex = 3;
             this.sequenceDiagram.Click += new System.EventHandler(this.sequenceDiagram_Click);
@@ -60,7 +60,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 56);
+            this.panel1.Location = new System.Drawing.Point(3, 44);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(335, 747);
             this.panel1.TabIndex = 4;
@@ -68,6 +68,7 @@
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(0, 0);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -79,11 +80,12 @@
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(212, 0);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(206, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 47);
+            this.button1.Size = new System.Drawing.Size(126, 35);
             this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
+            this.button1.Text = "SEARCH";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -99,7 +101,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1052, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1165, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -114,22 +116,27 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(287, 47);
+            this.panel2.Size = new System.Drawing.Size(332, 35);
             this.panel2.TabIndex = 0;
             // 
             // textBox3
             // 
             this.textBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.textBox3.Location = new System.Drawing.Point(0, 0);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(206, 20);
+            this.textBox3.Size = new System.Drawing.Size(206, 35);
             this.textBox3.TabIndex = 4;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MVSHandlerLogViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1387, 782);
+            this.ClientSize = new System.Drawing.Size(1500, 782);
             this.Controls.Add(this.sequenceDiagram);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MVSHandlerLogViewer";

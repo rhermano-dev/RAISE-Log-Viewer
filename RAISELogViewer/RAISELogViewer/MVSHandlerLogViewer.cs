@@ -51,6 +51,7 @@ namespace SequenceDiagramTestApp
             file = MainData.FilePath + "/MVSH/MVSH" + MainData.Time + ".txt";
             //file = "D:\\_VM\\Log\\MVSH\\MVSH20230419.txt";
             SequenceLoad("");
+            this.Location = new Point(350, 50);
         }
 
         private void sequenceDiagram_Click(object sender, EventArgs e)
@@ -79,7 +80,7 @@ namespace SequenceDiagramTestApp
 
             for (int i = this.zzones.Count - 1; i >= 0; i--)
             {
-                Zone zone = this.zones[i - participantCount];
+                Zone zone = this.zzones[i];
 
                 if (zone.Location.Contains(p))
                 {
@@ -107,60 +108,61 @@ namespace SequenceDiagramTestApp
 
             if (!string.IsNullOrEmpty(file))
             {
-                sequence.Tick("");
-                var sampe = File.ReadAllLines(file).ToList()
-                .Select((value, index) => new { value, index })
-                .Where(x => x.value.Substring(0, 12) == time)
-                .Select(x => x.index)
-                .Take(1)
-                .ToList();
+                    sequence.Tick("");
+                    var sampe = File.ReadAllLines(file).ToList()
+                    .Select((value, index) => new { value, index })
+                    .Where(x => x.value.Substring(0, 12) == time)
+                    .Select(x => x.index)
+                    .Take(1)
+                    .ToList();
 
-                File.ReadAllLines(file)
-                    .ToList()
-                    .Skip(sampe.FirstOrDefault() == 0 ? 0 : sampe.FirstOrDefault() - 1)
-                    .ToList().ForEach(x => {
+                    File.ReadAllLines(file)
+                        .ToList()
+                        .Skip(sampe.FirstOrDefault() == 0 ? 0 : sampe.FirstOrDefault() - 1)
+                        .ToList().ForEach(x => {
 
-                        Data d = new Data();
-                        string ss = x;
+                            Data d = new Data();
+                            string ss = x;
 
-                        d.Time = ss.Substring(0, 12);
+                            d.Time = ss.Substring(0, 12);
 
-                        ss = ss.Substring(12);
+                            ss = ss.Substring(12);
 
-                        d.LogType = ss.Substring(1, 3);
+                            d.LogType = ss.Substring(1, 3);
 
-                        ss = ss.Substring(5);
+                            ss = ss.Substring(5);
 
-                        d.MessageType = ss.Split(' ')[0];
+                            d.MessageType = ss.Split(' ')[0];
 
 
-                        if (d.MessageType == "send" || d.MessageType == "receive")
-                        {
-                            ss = ss.Substring(d.MessageType.Length + 9);
-
-                            d.JsonString = ss;
-                            JObject json = JObject.Parse(d.JsonString);
-
-                            string sP1 = json?["hit"]?["label"]?["callFrom"]?.ToString();
-                            string sP2 = json?["hit"]?["label"]?["callTo"]?.ToString();
-
-                            if (sP1 != null || sP2 != null)
+                            if (d.MessageType == "send" || d.MessageType == "receive")
                             {
-                                Participant p1 = sequence.Participants.CreateOrGet(sP1);
-                                Participant p2 = sequence.Participants.CreateOrGet(sP2);
-                                sequence.Messages.Add(json?["hit"]?["label"]?["scene"]?.ToString(), p1, p2, sP1 + " -> " + sP2);
-                                sequence.Tick(d.Time);
-                                sequence.Continue();
+                                ss = ss.Substring(d.MessageType.Length + 9);
 
-                                list.Add(d);
+                                d.JsonString = ss;
+                                JObject json = JObject.Parse(d.JsonString);
+
+                                string sP1 = json?["hit"]?["label"]?["callFrom"]?.ToString();
+                                string sP2 = json?["hit"]?["label"]?["callTo"]?.ToString();
+
+                                if (sP1 != null || sP2 != null)
+                                {
+                                    Participant p1 = sequence.Participants.CreateOrGet(sP1);
+                                    Participant p2 = sequence.Participants.CreateOrGet(sP2);
+                                    sequence.Messages.Add(json?["hit"]?["label"]?["scene"]?.ToString(), p1, p2, sP1 + " -> " + sP2);
+                                    sequence.Tick(d.Time);
+                                    sequence.Continue();
+
+                                    list.Add(d);
+                                }
                             }
-                        }
 
-                    });
+                        });
 
-                this.zones = this.sequenceDiagram.timeZones;
-                this.zzones = this.sequenceDiagram.zones;
-                participantCount = this.sequenceDiagram.Sequence.Participants.Count();
+                    this.zones = this.sequenceDiagram.timeZones;
+                    this.zzones = this.sequenceDiagram.zones;
+                    participantCount = this.sequenceDiagram.Sequence.Participants.Count();
+
             }
             
         }

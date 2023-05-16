@@ -49,6 +49,7 @@ namespace SequenceDiagramTestApp
         private void MVSHandlerLogViewer_Load(object sender, EventArgs e)
         {
             file = MainData.FilePath + "/MVSH/MVSH" + MainData.Time + ".txt";
+            //file = "D:\\_VM\\Log\\MVSH\\MVSH20230419.txt";
             SequenceLoad("");
         }
 
@@ -73,23 +74,28 @@ namespace SequenceDiagramTestApp
                         break;
                     }
                 }
+
             }
-        }
 
-        private void FillRegionRectangle(PaintEventArgs e)
-        {
+            for (int i = this.zzones.Count - 1; i >= 0; i--)
+            {
+                Zone zone = this.zones[i - participantCount];
 
-            // Create solid brush.
-            SolidBrush blueBrush = new SolidBrush(Color.Blue);
+                if (zone.Location.Contains(p))
+                {
+                    if (zone.Participant == null)
+                    {
+                        //string j = list.Where(x => x.Time == zone.Description).FirstOrDefault().JsonString;
+                        string j = list[i - participantCount].JsonString;
+                        string jsonFormatted = JValue.Parse(j).ToString(Formatting.Indented);
+                        this.panel1.Controls.OfType<TextBox>().FirstOrDefault().Text = jsonFormatted;
 
-            // Create rectangle for region.
-            Rectangle fillRect = new Rectangle(100, 100, 200, 200);
+                        textBox3.Text = zone.Description;
+                        break;
+                    }
+                }
 
-            // Create region for fill.
-            Region fillRegion = new Region(fillRect);
-
-            // Fill region to screen.
-            e.Graphics.FillRegion(blueBrush, fillRegion);
+            }
         }
 
         private void SequenceLoad(string time)
@@ -153,6 +159,7 @@ namespace SequenceDiagramTestApp
                     });
 
                 this.zones = this.sequenceDiagram.timeZones;
+                this.zzones = this.sequenceDiagram.zones;
                 participantCount = this.sequenceDiagram.Sequence.Participants.Count();
             }
             

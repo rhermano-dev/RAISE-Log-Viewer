@@ -60,7 +60,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 32);
+            this.panel1.Location = new System.Drawing.Point(3, 56);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(335, 747);
             this.panel1.TabIndex = 4;
@@ -81,7 +81,7 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
             this.button1.Location = new System.Drawing.Point(212, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 47);
             this.button1.TabIndex = 6;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -114,7 +114,7 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(287, 23);
+            this.panel2.Size = new System.Drawing.Size(287, 47);
             this.panel2.TabIndex = 0;
             // 
             // textBox3
